@@ -35,7 +35,8 @@ const parseInput = (command) => {
             logger('Missing PLACE commands. Example: PLACE 0,0,NORTH')
             return [];
         }
-        return [command_initiator, place_commands[0], place_commands[1], place_commands[2]];
+        const pos = { x: place_commands[0], y: place_commands[1], f: place_commands[2] };
+        return [command_initiator, pos];
     }
 
     return [command_initiator];
