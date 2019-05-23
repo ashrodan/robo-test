@@ -24,7 +24,7 @@ function move(ROBOT_POSITION) {
 
     const axis_value = ROBOT_POSITION[axis];
     ROBOT_POSITION[axis] = eval(axis_value + direction + 1);
-    console.log(axis_value, direction, 1, ROBOT_POSITION[axis]);
+    // console.log(axis_value, direction, 1, ROBOT_POSITION[axis]);
     return ROBOT_POSITION;
 }
 
