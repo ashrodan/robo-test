@@ -89,7 +89,6 @@ test('MOVE command will update the robot coordinates facing SOUTH', () => {
     const ROBOT_POSITION = defaultPosition();
 
     doCommand(['PLACE', { x: 2, y: 4, f: 'SOUTH' }], ROBOT_POSITION);
-    console.log(ROBOT_POSITION);
     doCommand(['MOVE'], ROBOT_POSITION);
 
     expect(ROBOT_POSITION.f).toBe('SOUTH');
@@ -105,4 +104,15 @@ test('MOVE command not move robot off the board north side', () => {
     doCommand(['MOVE'], ROBOT_POSITION);
 
     expect(ROBOT_POSITION.y).toBe(5);
+})
+test('MOVE command not move robot off the board east side', () => {
+    const ROBOT_POSITION = defaultPosition();
+
+    doCommand(['PLACE', { x: 2, y: 4, f: 'EAST' }], ROBOT_POSITION);
+    doCommand(['MOVE'], ROBOT_POSITION);
+    doCommand(['MOVE'], ROBOT_POSITION);
+    doCommand(['MOVE'], ROBOT_POSITION);
+    doCommand(['MOVE'], ROBOT_POSITION);
+
+    expect(ROBOT_POSITION.x).toBe(5);
 })
