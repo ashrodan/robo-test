@@ -14,7 +14,6 @@ const parseInput = (command) => {
     if (!includes) {
         return [];
     };
-    console.log(command_split.length)
     if (command_initiator == 'PLACE' && command_split.length == 1) {
         return []
     }
