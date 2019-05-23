@@ -97,3 +97,12 @@ test('MOVE command will update the robot coordinates facing SOUTH', () => {
     expect(ROBOT_POSITION.y).toBe(3);
     expect(ROBOT_POSITION.onBoard).toBe(true);
 })
+test('MOVE command not move robot off the board north side', () => {
+    const ROBOT_POSITION = defaultPosition();
+
+    doCommand(['PLACE', { x: 2, y: 4, f: 'NORTH' }], ROBOT_POSITION);
+    doCommand(['MOVE'], ROBOT_POSITION);
+    doCommand(['MOVE'], ROBOT_POSITION);
+
+    expect(ROBOT_POSITION.y).toBe(5);
+})
