@@ -11,5 +11,5 @@
 
 ## TODO
 * Hook up to CI build process
-* Add functional tests
+* Add e2e tests
 
