@@ -6,7 +6,7 @@ var upperStr = require('./src/utils').upperStr;
 
 process.env['DEBUG'] = true;
 
-readlineSync.setDefaultOptions({ prompt: 'Input >> ' });
+readlineSync.setDefaultOptions({ prompt: '🤖 >> ' });
 
 const ROBOT_POSITION = {
     x: 0,

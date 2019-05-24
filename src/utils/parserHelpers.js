@@ -24,7 +24,6 @@ const parseInput = (command) => {
             logger('Missing PLACE commands. Example: PLACE 0,0,NORTH')
             return [];
         }
-        console.log(JSON.stringify(place_commands))
         const pos = { x: place_commands[0], y: place_commands[1], f: place_commands[2] };
         return [command_initiator, pos];
     }
