@@ -10,8 +10,6 @@
 * `NPM test` to run the tests
 
 ## TODO
-* Better parse validation
 * Hook up to CI build process
-* Convert to typscript
 * Add functional tests
 
