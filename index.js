@@ -1,10 +1,11 @@
 var readlineSync = require('readline-sync');
+var argv = require('minimist')(process.argv.slice(2));
 var doCommand = require('./src/actions');
 var parseInput = require('./src/utils/parserHelpers');
 var logger = require('./src/utils').logger;
 var upperStr = require('./src/utils').upperStr;
 
-process.env['DEBUG'] = true;
+process.env['DEBUG'] = argv.debug;
 
 readlineSync.setDefaultOptions({ prompt: '🤖 >> ' });
 

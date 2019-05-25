@@ -23,7 +23,19 @@ test('Entering in `report` will parse to REPORT', () => {
 test('Entering in `PLACE 1,2,EAST` will parse to object without error', () => {
     const result = parseInput('PLACE 1,2,EAST');
     expect(result[0]).toBe('PLACE');
-    expect(result[1].x).toBe('1');
-    expect(result[1].y).toBe('2');
+    expect(result[1].x).toBe(1);
+    expect(result[1].y).toBe(2);
     expect(result[1].f).toBe('EAST');
+});
+test('Entering in `place 1,2,east` will parse to object without error and capitalize text', () => {
+    const result = parseInput('PLACE 1,2,EAST');
+    expect(result[0]).toBe('PLACE');
+    expect(result[1].x).toBe(1);
+    expect(result[1].y).toBe(2);
+    expect(result[1].f).toBe('EAST');
+});
+test('Entering in invalid place command will return nothing: `place 1,` ', () => {
+    const result = parseInput('PLACE 1,2,EAST');
+    expect(result[0]).toBe('PLACE');
+    expect(result[1].length).toBe(undefined);
 });

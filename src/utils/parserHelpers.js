@@ -1,5 +1,6 @@
 var logger = require('./index').logger;
 var upperStr = require('./index').upperStr;
+var orientations = require('./orientationHelper').orientations;
 
 const ACCEPTED_COMMAND = ['PLACE', 'MOVE', 'LEFT', 'RIGHT', 'REPORT'];
 
@@ -24,7 +25,12 @@ const parseInput = (command) => {
             logger('Missing PLACE commands. Example: PLACE 0,0,NORTH')
             return [];
         }
-        const pos = { x: place_commands[0], y: place_commands[1], f: place_commands[2] };
+        if (isNaN(parseInt(place_commands[0]))
+            || isNaN(parseInt(place_commands[1]))
+            || !orientations.includes(upperStr(place_commands[2]))) {
+            return [];
+        }
+        const pos = { x: parseInt(place_commands[0]), y: parseInt(place_commands[1]), f: upperStr(place_commands[2]) };
         return [command_initiator, pos];
     }
 

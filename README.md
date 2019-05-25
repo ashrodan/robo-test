@@ -5,9 +5,12 @@
 * Jest testing
 
 ## To Run
-* `NPM i` in the folder
-* `NPM start` to start the program as a CLI
-* `NPM test` to run the tests
+* `npm i` in the folder
+* `npm start` to start the program as a CLI
+* `npm test` to run the tests
+
+## To Debug
+`npm run debug`
 
 ## TODO
 * Hook up to CI build process

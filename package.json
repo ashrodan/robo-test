@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "debug": "node index.js --debug",
     "test": "jest"
   },
   "author": "Ashley Rodan",
   "license": "ISC",
   "dependencies": {
     "eslint": "^5.16.0",
+    "minimist": "^1.2.0",
     "readline-sync": "^1.4.9"
   },
   "devDependencies": {
