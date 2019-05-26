@@ -42,7 +42,7 @@ test('1 RIGHT command will rotate robot to EAST', () => {
 
     expect(ROBOT_POSITION.f).toBe('EAST');
 })
-test('PLACE command will set robot in correct position', () => {
+test('PLACE command will set robot in correct position and on the board', () => {
     const ROBOT_POSITION = defaultPosition();
 
     doCommand(['PLACE', { x: 3, y: 4, f: 'WEST' }], ROBOT_POSITION);
@@ -96,7 +96,7 @@ test('MOVE command will update the robot coordinates facing SOUTH', () => {
     expect(ROBOT_POSITION.y).toBe(3);
     expect(ROBOT_POSITION.onBoard).toBe(true);
 })
-test('MOVE command not move robot off the board north side', () => {
+test('MOVE command will not move the robot off the board on the north side', () => {
     const ROBOT_POSITION = defaultPosition();
 
     doCommand(['PLACE', { x: 2, y: 4, f: 'NORTH' }], ROBOT_POSITION);
@@ -105,7 +105,7 @@ test('MOVE command not move robot off the board north side', () => {
 
     expect(ROBOT_POSITION.y).toBe(5);
 })
-test('MOVE command not move robot off the board east side', () => {
+test('MOVE command will not move the robot off the board on the east side', () => {
     const ROBOT_POSITION = defaultPosition();
 
     doCommand(['PLACE', { x: 2, y: 4, f: 'EAST' }], ROBOT_POSITION);
